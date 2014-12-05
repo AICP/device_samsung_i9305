@@ -7,3 +7,4 @@ allow mediaserver camera_data_file:file rw_file_perms;
 # Bluetooth audio
 allow mediaserver bluetooth:unix_stream_socket { connectto };
 allow mediaserver mfc_device:chr_file rw_file_perms;
+allow mediaserver system_data_file:file { write open };

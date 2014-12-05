@@ -61,7 +61,9 @@ BOARD_SEPOLICY_UNION += \
     init.te \
     kickstart.te \
     mediaserver.te \
+    netd.te \
     netmgrd.te \
+    nfc.te \
     qmiproxy.te \
     qmuxd.te \
     rild.te \

@@ -49,3 +49,4 @@ allow kickstart kickstart:process { execmem };
 #allow kickstart usbfs:filesystem { mount };
 allow kickstart usbfs:dir { search };
 #allow kickstart system_file:file { entrypoint };
+allow kickstart vfat:dir { search };

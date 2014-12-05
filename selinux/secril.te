@@ -30,4 +30,5 @@ allow secril-daemon radio_prop:property_service { set };
 allow secril-daemon sysfs_wake_lock:file { read write open };
 allow secril-daemon unlabeled:file { read open getattr setattr };
 #allow secril-daemon system_file:file { entrypoint };
-allow secril-daemon radio_data_file:dir { search };
+allow secril-daemon radio_data_file:dir { search write add_name read open remove_name };
+allow secril-daemon efs_file:dir { search };
