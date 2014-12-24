@@ -1,6 +1,3 @@
-# Specify phone tech before including full_phone
-$(call inherit-product, vendor/cm/config/gsm.mk)
-
 # Release name
 PRODUCT_RELEASE_NAME := i9305
 
@@ -8,15 +5,15 @@ PRODUCT_RELEASE_NAME := i9305
 TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
 
-# Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+# Inherit from our custom product configuration
+$(call inherit-product, vendor/nameless/config/common.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/samsung/i9305/full_i9305.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := i9305
-PRODUCT_NAME := cm_i9305
+PRODUCT_NAME := nameless_i9305
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := GT-I9305
 PRODUCT_MANUFACTURER := samsung
