@@ -57,10 +57,6 @@ on post-fs-data
     restorecon /tombstones/qcks/efs3.bin
     restorecon /tombstones/qcks/temp.dump
 
-    # for AT distributor
-    chown system radio /sys/module/cpuidle_exynos4/parameters/enable_mask
-    chmod 0664 /sys/module/cpuidle_exynos4/parameters/enable_mask
-
     # Waketime fot fast dormancy
     chown system radio /sys/devices/platform/mdm_hsic_pm0/waketime
     chmod 0660 /sys/devices/platform/mdm_hsic_pm0/waketime
@@ -82,12 +78,6 @@ on property:sys.boot_completed=1
 #    write /proc/sys/net/ipv6/conf/rmnet_usb2/accept_ra 2
 #    write /proc/sys/net/ipv6/conf/rmnet_usb3/accept_ra 2
 # SISO-ANDR_PERF :: END
-
-# AT Distributor for factory test
-service at_distributor /system/bin/at_distributor
-    class late_start
-    user root
-    group radio log
 
 # diag app for cp uart
 service diag_uart_log /system/bin/diag_uart_log
@@ -130,12 +120,3 @@ service gsiff_daemon /system/bin/gsiff_daemon
     class late_start
     user system
     group qcom_oncrpc gps
-
-# TVout
-service TvoutService_C /system/bin/bintvoutservice
-    class main
-    user system
-    group graphics
-
-on property:ro.tvout.enable=false
-    stop TvoutService_C
